@@ -1,0 +1,28 @@
+/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/networks/raft/raft.py:99: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.args['mixed_precision']):
+/home/imdpsopr/.local/lib/python3.9/site-packages/torch/amp/autocast_mode.py:266: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+  warnings.warn(
+Loaded checkpoint: model_weights/windflow.raft.pth.tar
+Running INSAT transfer inference...
+Region bounds: FULL DISK
+Resolution: 0.04°
+Traceback (most recent call last):
+  File "/home/imdpsopr/cloudmv/windflow/windflow-light/predict_insat.py", line 32, in <module>
+    result = inference.flows_by_files(
+  File "/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/inference_flows.py", line 343, in flows_by_files
+    flows = self.forward(img1, img2)[1]
+  File "/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/inference_flows.py", line 226, in forward
+    flows = inference(self.model, img1_pad[np.newaxis], img2_pad[np.newaxis], 
+  File "/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/inference_flows.py", line 135, in inference
+    model_out = model(x0_batch, x1_batch, test_mode=True)[0]
+  File "/home/imdpsopr/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/imdpsopr/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/networks/raft/raft.py", line 107, in forward
+    corr_fn = CorrBlock(fmap1, fmap2, radius=self.args['corr_radius'])
+  File "/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/networks/raft/corr.py", line 19, in __init__
+    corr = CorrBlock.corr(fmap1, fmap2)
+  File "/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/networks/raft/corr.py", line 58, in corr
+    corr = torch.matmul(fmap1.transpose(1,2), fmap2)
+RuntimeError: [enforce fail at alloc_cpu.cpp:124] err == 0. DefaultCPUAllocator: can't allocate memory: you tried to allocate 6528025000000 bytes. Error code 12 (Cannot allocate memory)

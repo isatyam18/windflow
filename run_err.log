@@ -1,0 +1,23 @@
+﻿python.exe : c:\Users\satya\OneDrive\Desktop\IMD project\windflow-light\windflow\networks\raft\raft.py:99: 
+FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` 
+instead.
+At line:1 char:1
++ & "c:/Users/satya/OneDrive/Desktop/IMD project/venv/Scripts/python.ex ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (c:\Users\satya\...s...)` instead.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  with autocast(enabled=self.args['mixed_precision']):
+C:\Users\satya\OneDrive\Desktop\IMD project\venv\Lib\site-packages\torch\cuda\amp\autocast_mode.py:54: UserWarning: 
+CUDA is not available or torch_xla is imported. Disabling autocast.
+  super().__init__(
+c:\Users\satya\OneDrive\Desktop\IMD project\windflow-light\windflow\networks\raft\raft.py:110: FutureWarning: 
+`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.args['mixed_precision']):
+C:\Users\satya\OneDrive\Desktop\IMD project\venv\Lib\site-packages\torch\functional.py:504: UserWarning: 
+torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at 
+C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\native\TensorShape.cpp:4217.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+c:\Users\satya\OneDrive\Desktop\IMD project\windflow-light\windflow\networks\raft\raft.py:126: FutureWarning: 
+`torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.args['mixed_precision']):

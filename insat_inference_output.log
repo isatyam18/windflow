@@ -1,0 +1,34 @@
+/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/networks/raft/raft.py:99: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.args['mixed_precision']):
+/home/imdpsopr/.local/lib/python3.9/site-packages/torch/amp/autocast_mode.py:266: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+  warnings.warn(
+/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/networks/raft/raft.py:110: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.args['mixed_precision']):
+/home/imdpsopr/.local/lib/python3.9/site-packages/torch/functional.py:554: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at /pytorch/aten/src/ATen/native/TensorShape.cpp:4322.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+Loaded checkpoint: model_weights/windflow.raft.pth.tar
+Running INSAT transfer inference...
+Region bounds: lat [0, 30], lon [70, 90]
+Resolution: 0.1°
+Traceback (most recent call last):
+  File "/home/imdpsopr/cloudmv/windflow/windflow-light/predict_insat.py", line 29, in <module>
+    result = inference.flows_by_files(
+  File "/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/inference_flows.py", line 327, in flows_by_files
+    flows = self.forward(img1, img2)[1]
+  File "/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/inference_flows.py", line 213, in forward
+    flows = inference(self.model, img1_norm[np.newaxis], img2_norm[np.newaxis], 
+  File "/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/inference_flows.py", line 130, in inference
+    model_out = model(x0_batch, x1_batch, test_mode=True)[0]
+  File "/home/imdpsopr/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/imdpsopr/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/networks/raft/raft.py", line 123, in forward
+    corr = corr_fn(coords1.float()) # index correlation volume
+  File "/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/networks/raft/corr.py", line 45, in __call__
+    corr = bilinear_sampler(corr, coords_lvl)
+  File "/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/networks/raft/utils/utils.py", line 65, in bilinear_sampler
+    img = F.grid_sample(img, grid, align_corners=True)
+  File "/home/imdpsopr/.local/lib/python3.9/site-packages/torch/nn/functional.py", line 5104, in grid_sample
+    return torch.grid_sampler(input, grid, mode_enum, padding_mode_enum, align_corners)
+RuntimeError: grid_sampler(): expected grid and input to have same batch size, but got input with sizes [988, 1, 38, 26] and grid with sizes [925, 9, 9, 2]

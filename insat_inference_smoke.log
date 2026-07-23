@@ -1,0 +1,21 @@
+/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/networks/raft/raft.py:99: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.args['mixed_precision']):
+/home/imdpsopr/.local/lib/python3.9/site-packages/torch/amp/autocast_mode.py:266: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+  warnings.warn(
+/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/networks/raft/raft.py:110: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.args['mixed_precision']):
+/home/imdpsopr/.local/lib/python3.9/site-packages/torch/functional.py:554: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at /pytorch/aten/src/ATen/native/TensorShape.cpp:4322.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+/home/imdpsopr/cloudmv/windflow/windflow-light/windflow/networks/raft/raft.py:126: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.args['mixed_precision']):
+Loaded checkpoint: model_weights/windflow.raft.pth.tar
+Running INSAT transfer inference...
+Region bounds: FULL DISK
+Resolution: 0.04°
+Inference complete!
+Result keys: ['Rad', 'U', 'V']
+U shape: (10219, 8172)
+V shape: (10219, 8172)
+U range (m/s): -65.75625186961972 to 80.96090767620545
+V range (m/s): -48.55894347700135 to 70.84939241651756
+Saved plot to insat-flows.png

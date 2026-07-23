@@ -1,0 +1,5 @@
+﻿Loaded checkpoint: C:\Users\satya\OneDrive\Desktop\IMD project\windflow-light\model_weights\windflow.raft.pth.tar
+Running INSAT transfer inference...
+Inference bounds: lat [-50, 50], lon [20, 130]
+Render bounds: lat [-40, 40], lon [30, 130]
+Resolution: 0.04░
